@@ -3,13 +3,10 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import os
 
-# Load the cleaned data
 df = pd.read_csv("cleaned_data/cleaned_sample.csv")
 
-# Set Seaborn theme
 sns.set_theme(style="whitegrid")
 
-# Analyze and plot each column
 for col in df.columns:
     plt.figure(figsize=(8, 5))
     if df[col].dtype == 'object':
