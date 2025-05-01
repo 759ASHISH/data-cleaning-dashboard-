@@ -67,17 +67,14 @@ def prev_image():
     current_index = (current_index - 1) % len(images)
     show_image(current_index)
 
-# Step 1: File picker
 file_path = filedialog.askopenfilename(title="Select Excel File", filetypes=[("Excel files", "*.xlsx *.xls")])
 if not file_path:
     print("No file selected.")
     exit()
 
-# Step 2: Clean + Analyze
 df = clean_dataset(file_path)
 generate_charts(df)
 
-# Step 3: GUI
 window = tk.Tk()
 window.geometry("800x550")
 window.title("Graph Viewer")
